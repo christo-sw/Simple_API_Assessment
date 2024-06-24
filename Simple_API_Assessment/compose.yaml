@@ -1,0 +1,20 @@
+services:
+  api:
+    container_name: api
+    build:
+      context: ../
+      dockerfile: Simple_Api_Assessment/Dockerfile
+    depends_on:
+      database:
+        condition: service_started
+ 
+  database:
+    container_name: database
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=Simple_API_user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=Simple_API_DB
