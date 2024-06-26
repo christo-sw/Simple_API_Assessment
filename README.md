@@ -49,7 +49,7 @@ docker compose down
 The database is seeded automatically if it is empty. The database container persists the database's data, so it is availabe
 after a restart or even after deleting and recreating the database container.
 
-NOTE: I did not use Visual Studio's container orchestration as a method of running both the API and the database. I tried doing so,
+**Note:** I did not use Visual Studio's container orchestration as a method of running both the API and the database. I tried doing so,
 but it did not work off the bat. Unfortunately, I did not have time to go back and get it working.
 
 ### API
@@ -71,7 +71,7 @@ dotnet run
 - To connect to the API, use `http://localhost:5049`
 - To connect to SwaggerUI, use `http://localhost:7156`
 
-NOTE: If running from Visual Studio, SwaggerUI will be available and open automatically. 
+**Note:** If running from Visual Studio, SwaggerUI will be available and open automatically. 
 If running from the command line, SwaggerUI is available but has to be navigated to using the above link.
 If running via docker, SwaggerUI will not be available, since the production build of the API does not host the UI.
 
