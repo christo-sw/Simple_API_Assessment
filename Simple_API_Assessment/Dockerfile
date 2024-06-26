@@ -11,6 +11,7 @@ WORKDIR /src
 COPY ["Simple_API_Assessment/Simple_API_Assessment.csproj", "Simple_API_Assessment/"]
 RUN dotnet restore "./Simple_API_Assessment/Simple_API_Assessment.csproj"
 COPY . .
+COPY ["Simple_API_Assessment/appsettings.Docker.json", "Simple_API_Assessment/appsettings.json"]
 WORKDIR "/src/Simple_API_Assessment"
 RUN dotnet build "./Simple_API_Assessment.csproj" -c $BUILD_CONFIGURATION -o /app/build
 

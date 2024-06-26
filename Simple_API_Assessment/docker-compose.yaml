@@ -4,6 +4,8 @@ services:
     build:
       context: ../
       dockerfile: Simple_Api_Assessment/Dockerfile
+    ports:
+      - 5049:80
     depends_on:
       database:
         condition: service_started
@@ -18,3 +20,8 @@ services:
       - POSTGRES_USER=Simple_API_user
       - POSTGRES_PASSWORD=password
       - POSTGRES_DB=Simple_API_DB
+    volumes:
+      - pgdata:/var/lib/postgresql/data 
+
+volumes:
+  pgdata:

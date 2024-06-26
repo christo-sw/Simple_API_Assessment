@@ -10,69 +10,69 @@ using Simple_API_Assessment.Data;
 
 namespace Simple_API_Assessment.Migrations
 {
-    [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+  [DbContext(typeof(DataContext))]
+  partial class DataContextModelSnapshot : ModelSnapshot
+  {
+    protected override void BuildModel(ModelBuilder modelBuilder)
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
-        {
 #pragma warning disable 612, 618
-            modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.29")
-                .HasAnnotation("Relational:MaxIdentifierLength", 63);
+      modelBuilder
+          .HasAnnotation("ProductVersion", "6.0.29")
+          .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
+      NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Simple_API_Assessment.Models.Applicant", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+      modelBuilder.Entity("Simple_API_Assessment.Models.Applicant", b =>
+          {
+            b.Property<int>("Id")
+                      .ValueGeneratedOnAdd()
+                      .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+            NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text");
+            b.Property<string>("Name")
+                      .IsRequired()
+                      .HasColumnType("text");
 
-                    b.HasKey("Id");
+            b.HasKey("Id");
 
-                    b.ToTable("Applicants");
-                });
+            b.ToTable("Applicants");
+          });
 
-            modelBuilder.Entity("Simple_API_Assessment.Models.Skill", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+      modelBuilder.Entity("Simple_API_Assessment.Models.Skill", b =>
+          {
+            b.Property<int>("Id")
+                      .ValueGeneratedOnAdd()
+                      .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+            NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("ApplicantId")
-                        .HasColumnType("integer");
+            b.Property<int?>("ApplicantId")
+                      .HasColumnType("integer");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text");
+            b.Property<string>("Name")
+                      .IsRequired()
+                      .HasColumnType("text");
 
-                    b.HasKey("Id");
+            b.HasKey("Id");
 
-                    b.HasIndex("ApplicantId");
+            b.HasIndex("ApplicantId");
 
-                    b.ToTable("Skills");
-                });
+            b.ToTable("Skills");
+          });
 
-            modelBuilder.Entity("Simple_API_Assessment.Models.Skill", b =>
-                {
-                    b.HasOne("Simple_API_Assessment.Models.Applicant", null)
-                        .WithMany("Skills")
-                        .HasForeignKey("ApplicantId");
-                });
+      modelBuilder.Entity("Simple_API_Assessment.Models.Skill", b =>
+          {
+            b.HasOne("Simple_API_Assessment.Models.Applicant", null)
+                      .WithMany("Skills")
+                      .HasForeignKey("ApplicantId");
+          });
 
-            modelBuilder.Entity("Simple_API_Assessment.Models.Applicant", b =>
-                {
-                    b.Navigation("Skills");
-                });
+      modelBuilder.Entity("Simple_API_Assessment.Models.Applicant", b =>
+          {
+            b.Navigation("Skills");
+          });
 #pragma warning restore 612, 618
-        }
     }
+  }
 }
