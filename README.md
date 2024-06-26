@@ -26,7 +26,7 @@ docker compose -f docker-compose.DBOnly.yaml up -d
 
 This creates the postgres database container and exposes it on port 5432. It should show in Docker Desktop in the following manner:
 
-** TODO: INSERT SCREENSHOT **
+![image](https://github.com/christo-sw/Simple_API_Assessment/assets/103880515/73d79228-8fbe-42d5-a27d-3d09be45d60f)
 
 Once you are done, you can remove the container with the following command:
 
@@ -60,7 +60,7 @@ To run the production build of the API in a docker container, follow the steps i
 
 If you wish to run the docker from Visual Studio, simply open the solution and click on the run button that says "Simple_API_Assessment":
 
-**TODO**: Insert image here
+![image](https://github.com/christo-sw/Simple_API_Assessment/assets/103880515/8f3b8fb8-0277-483d-9444-79cd80288a2c)
 
 Lastly, if you wish to run the API from the console, open the project directory in the console (at the same level as Program.cs) and run the command:
 
