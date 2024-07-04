@@ -121,6 +121,8 @@ to speed up the API by allowing for more concurrent requests.
 
 I would also like to add a search endpoint that allows clients to search for different applicants or skills.
 
+Lastly, I would like to add testing, even though the API is relatively simple.
+
 ## Notes
 
 I decided to use Entity Framework Core instead of Entity Framework 6.
